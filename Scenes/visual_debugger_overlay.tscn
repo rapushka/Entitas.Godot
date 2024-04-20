@@ -35,13 +35,17 @@ color = Color(0, 0, 0, 0.117647)
 [node name="Context Views Pool" type="Node" parent="Contexts Drawer" node_paths=PackedStringArray("Root")]
 script = ExtResource("3_1a8os")
 PackedScene = ExtResource("4_1su47")
-Root = NodePath("../Root")
+Root = NodePath("../ScrollContainer/Root")
 
-[node name="Root" type="VBoxContainer" parent="Contexts Drawer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Contexts Drawer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Root" type="VBoxContainer" parent="Contexts Drawer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
