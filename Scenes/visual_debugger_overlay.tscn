@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnnqqvnwjc1na"]
 
-[ext_resource type="Script" path="res://Entitas.Godot/Core/InGameOverlay.cs" id="1_73anx"]
-[ext_resource type="Script" path="res://Entitas.Godot/Core/ContextsDrawer.cs" id="2_1kwll"]
-[ext_resource type="Script" path="res://Entitas.Godot/Core/Pool.cs" id="3_1a8os"]
-[ext_resource type="PackedScene" uid="uid://di4nliylvhptd" path="res://Entitas.Godot/Scenes/context_debug_view.tscn" id="4_1su47"]
+[ext_resource type="Script" path="res://addons/Entitas.Godot/Core/InGameOverlay.cs" id="1_73anx"]
+[ext_resource type="Script" path="res://addons/Entitas.Godot/Core/ContextsDrawer.cs" id="2_1kwll"]
+[ext_resource type="Script" path="res://addons/Entitas.Godot/Core/Pool.cs" id="3_1a8os"]
+[ext_resource type="PackedScene" uid="uid://di4nliylvhptd" path="res://addons/Entitas.Godot/Scenes/context_debug_view.tscn" id="4_1su47"]
 
 [node name="Visual debugger overlay" type="Control" node_paths=PackedStringArray("ContextsDrawer")]
 layout_mode = 3

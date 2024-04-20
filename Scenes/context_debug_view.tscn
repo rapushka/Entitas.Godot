@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://di4nliylvhptd"]
 
-[ext_resource type="Script" path="res://Entitas.Godot/Core/ContextDebugView.cs" id="1_kig85"]
-[ext_resource type="Script" path="res://Entitas.Godot/Core/Pool.cs" id="2_gde7l"]
-[ext_resource type="PackedScene" uid="uid://bc7otucoxl5w" path="res://Entitas.Godot/Scenes/entity_list_entry_debug_view.tscn" id="3_qq06j"]
+[ext_resource type="Script" path="res://addons/Entitas.Godot/Core/ContextDebugView.cs" id="1_kig85"]
+[ext_resource type="Script" path="res://addons/Entitas.Godot/Core/Pool.cs" id="2_gde7l"]
+[ext_resource type="PackedScene" uid="uid://bc7otucoxl5w" path="res://addons/Entitas.Godot/Scenes/entity_list_entry_debug_view.tscn" id="3_qq06j"]
 
 [node name="ContextDebugView" type="VBoxContainer" node_paths=PackedStringArray("NameLabel", "EntityViewsPool")]
 custom_minimum_size = Vector2(0, 35)
