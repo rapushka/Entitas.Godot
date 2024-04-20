@@ -2,6 +2,7 @@ using Godot;
 
 namespace Entitas.Godot;
 
+[GlobalClass]
 public partial class InGameOverlay : Control
 {
 	[Export] private ContextsDrawer ContextsDrawer { get; set; }
@@ -21,7 +22,7 @@ public partial class InGameOverlay : Control
 
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("debug/toggle_overlay"))
+		if (Input.IsActionJustPressed("debug_toggle_overlay"))
 			ToggleOverlay();
 
 		if (Visible)

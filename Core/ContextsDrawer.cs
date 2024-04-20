@@ -4,6 +4,7 @@ using Godot;
 
 namespace Entitas.Godot;
 
+[GlobalClass]
 public partial class ContextsDrawer : Control
 {
 	[Export] private UpdateMode UpdateMode       { get; set; }

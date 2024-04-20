@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnnqqvnwjc1na"]
+
+[ext_resource type="Script" path="res://Entitas.Godot/Core/InGameOverlay.cs" id="1_73anx"]
+[ext_resource type="Script" path="res://Entitas.Godot/Core/ContextsDrawer.cs" id="2_1kwll"]
+[ext_resource type="Script" path="res://Entitas.Godot/Core/Pool.cs" id="3_1a8os"]
+[ext_resource type="PackedScene" uid="uid://di4nliylvhptd" path="res://Entitas.Godot/Scenes/context_debug_view.tscn" id="4_1su47"]
+
+[node name="Visual debugger overlay" type="Control" node_paths=PackedStringArray("ContextsDrawer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_73anx")
+ContextsDrawer = NodePath("Contexts Drawer")
+
+[node name="Contexts Drawer" type="Control" parent="." node_paths=PackedStringArray("ContextViewsPool")]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 352.0
+offset_bottom = 384.0
+script = ExtResource("2_1kwll")
+ContextViewsPool = NodePath("Context Views Pool")
+
+[node name="Background" type="ColorRect" parent="Contexts Drawer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.117647)
+
+[node name="Context Views Pool" type="Node" parent="Contexts Drawer" node_paths=PackedStringArray("Root")]
+script = ExtResource("3_1a8os")
+PackedScene = ExtResource("4_1su47")
+Root = NodePath("../ScrollContainer/Root")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Contexts Drawer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Root" type="VBoxContainer" parent="Contexts Drawer/ScrollContainer"]
+layout_mode = 2

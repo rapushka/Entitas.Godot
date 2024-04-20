@@ -5,6 +5,7 @@ using Godot;
 
 namespace Entitas.Godot;
 
+[GlobalClass]
 public partial class Pool : Node // TODO: try Pool<T>
 {
 	[Export] private PackedScene PackedScene { get; set; }

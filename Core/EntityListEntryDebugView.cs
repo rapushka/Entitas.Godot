@@ -2,6 +2,7 @@ using Godot;
 
 namespace Entitas.Godot;
 
+[GlobalClass]
 public partial class EntityListEntryDebugView : Control
 {
 	[Export] private Label NameLabel { get; set; }

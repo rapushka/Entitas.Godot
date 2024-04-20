@@ -2,6 +2,7 @@ using Godot;
 
 namespace Entitas.Godot;
 
+[GlobalClass]
 public partial class ContextDebugView : Control
 {
 	[Export] private Label NameLabel       { get; set; }
