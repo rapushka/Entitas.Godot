@@ -5,7 +5,8 @@ namespace Entitas.Godot;
 public partial class InGameOverlay : Control
 {
 	[Export] private ContextsDrawer ContextsDrawer { get; set; }
-	[Export] private EntityEditor   EntityEditor   { get; set; }
+	// TODO:
+	// [Export] private EntityEditor   EntityEditor   { get; set; }
 
 	public override void _EnterTree()
 	{
@@ -35,7 +36,7 @@ public partial class InGameOverlay : Control
 	private new void Show()
 	{
 		// EntityDrawer.Enable(ContextsDrawer.SelectedEntity);
-		ContextsDrawer.EntitySelected += EntityEditor.SwitchTo;
+		// ContextsDrawer.EntitySelected += EntityEditor.SwitchTo;
 
 		base.Show();
 	}
@@ -44,8 +45,8 @@ public partial class InGameOverlay : Control
 	{
 		base.Hide();
 
-		EntityEditor.Disable();
-		ContextsDrawer.EntitySelected -= EntityEditor.SwitchTo;
+		// EntityEditor.Disable();
+		// ContextsDrawer.EntitySelected -= EntityEditor.SwitchTo;
 	}
 
 	private void UpdateOverlay()
