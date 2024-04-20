@@ -3,7 +3,7 @@ using Godot;
 namespace Entitas.Godot;
 
 [GlobalClass]
-public partial class ContextDebugView : Control
+public partial class ContextDebugView : VBoxContainer
 {
 	[Export] private Label NameLabel       { get; set; }
 	[Export] private Pool  EntityViewsPool { get; set; }
@@ -14,7 +14,7 @@ public partial class ContextDebugView : Control
 	{
 		_context = context;
 
-		NameLabel.Name = _context.contextInfo.name;
+		NameLabel.Text = _context.contextInfo.name;
 
 		_context.OnEntityCreated += OnEntityCreated;
 		_context.OnGroupCreated += OnGroupCreated;

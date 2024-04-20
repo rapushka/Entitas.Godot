@@ -4,51 +4,39 @@
 [ext_resource type="Script" path="res://Entitas.Godot/Core/Pool.cs" id="2_gde7l"]
 [ext_resource type="PackedScene" uid="uid://bc7otucoxl5w" path="res://Entitas.Godot/Scenes/entity_list_entry_debug_view.tscn" id="3_qq06j"]
 
-[node name="ContextDebugView" type="Control" node_paths=PackedStringArray("NameLabel", "EntityViewsPool")]
-layout_mode = 3
+[node name="ContextDebugView" type="VBoxContainer" node_paths=PackedStringArray("NameLabel", "EntityViewsPool")]
+custom_minimum_size = Vector2(0, 35)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kig85")
-NameLabel = NodePath("Title/Label")
+NameLabel = NodePath("PanelContainer/Container/Title/Label")
 EntityViewsPool = NodePath("Entity Views Pool")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.176471, 0.207843, 1)
-
-[node name="Entity Views Pool" type="Node" parent="." node_paths=PackedStringArray("Root")]
-script = ExtResource("2_gde7l")
-PackedScene = ExtResource("3_qq06j")
-Root = NodePath("../VBoxContainer")
-
-[node name="Title" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 23.0
 
-[node name="ColorRect" type="ColorRect" parent="Title"]
+[node name="Container" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-color = Color(0.25098, 0.266667, 0.298039, 1)
 
-[node name="Label" type="Label" parent="Title"]
+[node name="Title" type="PanelContainer" parent="PanelContainer/Container"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Container/Title"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 text = "Context Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 25.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Entities" type="VBoxContainer" parent="PanelContainer/Container"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Entity Views Pool" type="Node" parent="." node_paths=PackedStringArray("Root")]
+script = ExtResource("2_gde7l")
+PackedScene = ExtResource("3_qq06j")
+Root = NodePath("../PanelContainer/Container/Entities")
