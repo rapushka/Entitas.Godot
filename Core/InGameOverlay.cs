@@ -5,19 +5,27 @@ namespace Entitas.Godot;
 [GlobalClass]
 public partial class InGameOverlay : Control
 {
+	[Export] private bool           AutoInitialize { get; set; }
 	[Export] private ContextsDrawer ContextsDrawer { get; set; }
 	// TODO:
 	// [Export] private EntityEditor   EntityEditor   { get; set; }
 
-	public override void _EnterTree()
+	public override void _Ready()
 	{
 		Visible = false;
-		ContextsDrawer.Initialize();
+
+		if (AutoInitialize)
+			Initialize();
 	}
 
 	public override void _ExitTree()
 	{
 		ContextsDrawer.Reset();
+	}
+
+	public void Initialize()
+	{
+		ContextsDrawer.Initialize();
 	}
 
 	public override void _Process(double delta)
